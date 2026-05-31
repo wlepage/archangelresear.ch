@@ -1,5 +1,6 @@
 ---
-// Extreme-value distribution curve with a highlighted tail point.
+// Gumbel CDF (S-curve) on x/y axes, with the extreme-value point at top-right
+// and dashed guide lines reading across to each axis.
 ---
 
 <svg
@@ -13,11 +14,16 @@
   aria-hidden="true"
   focusable="false"
 >
-  <!-- baseline -->
-  <line x1="6" y1="38" x2="42" y2="38"></line>
-  <!-- skewed extreme-value curve -->
-  <path d="M6 38 C 13 38, 16 14, 22 14 C 28 14, 30 30, 36 35 C 39 37, 41 38, 42 38"></path>
-  <!-- highlighted tail point -->
-  <circle cx="36" cy="35" r="2.4" fill="currentColor" stroke="none"></circle>
-  <line x1="36" y1="35" x2="36" y2="38" stroke-dasharray="2 2.5"></line>
+  <!-- axes -->
+  <line x1="9" y1="9" x2="9" y2="40"></line>
+  <line x1="9" y1="40" x2="41" y2="40"></line>
+  <!-- dashed guides from the point to each axis -->
+  <line x1="37" y1="12.4" x2="37" y2="40" stroke-dasharray="2 2.5"></line>
+  <line x1="9" y1="12.4" x2="37" y2="12.4" stroke-dasharray="2 2.5"></line>
+  <!-- downward arrowhead at the foot of the vertical guide -->
+  <path d="M37 40 L34 34.4 L40 34.4 Z" fill="currentColor" stroke="none"></path>
+  <!-- Gumbel cumulative distribution curve -->
+  <path d="M10 38.5 C 19 38.5, 20 15, 29 13.5 C 33 13, 35 12.6, 37 12.4"></path>
+  <!-- extreme-value point -->
+  <circle cx="37" cy="12.4" r="2.3" fill="currentColor" stroke="none"></circle>
 </svg>

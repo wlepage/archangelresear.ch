@@ -3,10 +3,8 @@ import { products } from '../data/products';
 import ProductCard from './ProductCard.astro';
 ---
 
-<section id="work" class="section products" aria-labelledby="work-heading">
+<section id="work" class="section products" aria-label="Projects">
   <div class="container">
-    <h2 id="work-heading" class="section-heading">Work</h2>
-    <p class="section-intro">Selected work from Archangel Research.</p>
     <ul class="product-grid" role="list">
       {products.map((product) => <ProductCard product={product} />)}
     </ul>

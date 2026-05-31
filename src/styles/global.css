@@ -143,13 +143,6 @@ svg {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
 }
 
-.section-intro {
-  margin-top: 0.75rem;
-  max-width: 48ch;
-  color: var(--ink-2);
-  font-size: 1.125rem;
-}
-
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
@@ -211,34 +204,6 @@ svg {
   font-weight: 680;
 }
 
-.hero-support {
-  margin-top: 1.5rem;
-  max-width: 52ch;
-  font-size: clamp(1.0625rem, 2.2vw, 1.3rem);
-  color: var(--ink-2);
-}
-
-/* ---------- Focus ---------- */
-.focus-grid {
-  list-style: none;
-  margin: 2.5rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 1.75rem 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-}
-
-.focus-title {
-  font-size: 1.1rem;
-  font-weight: 620;
-}
-
-.focus-detail {
-  margin-top: 0.4rem;
-  color: var(--ink-2);
-  font-size: 1rem;
-}
-
 /* ---------- Products ---------- */
 .product-grid {
   list-style: none;
@@ -253,10 +218,13 @@ svg {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 100%;
   padding: 1.75rem;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
   transition:
     border-color 0.15s ease,
     transform 0.15s ease;
@@ -278,78 +246,25 @@ svg {
   height: 100%;
 }
 
-.product-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
 .product-name {
   font-size: 1.25rem;
   font-weight: 640;
+  margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.15s ease;
 }
 
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8125rem;
-  font-weight: 550;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-}
-
-.status-dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  flex: none;
-}
-
-.status--live {
-  color: var(--accent);
-}
-
-.status--live .status-dot {
-  background: var(--accent);
-}
-
-.status--coming-soon {
-  color: var(--pending);
-}
-
-.status--coming-soon .status-dot {
-  background: var(--pending);
+.product-card:hover .product-name {
+  text-decoration-color: var(--accent);
 }
 
 .product-description {
   color: var(--ink-2);
   font-size: 0.9875rem;
-  flex: 1;
-}
-
-.product-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 560;
-  align-self: flex-start;
-}
-
-.cta-arrow {
-  transition: transform 0.15s ease;
-}
-
-.product-cta:hover .cta-arrow {
-  transform: translateX(3px);
-}
-
-.product-cta--pending {
-  color: var(--pending);
-  text-decoration: none;
-  font-style: italic;
 }
 
 /* ---------- Contact ---------- */
@@ -408,31 +323,6 @@ svg {
   outline-offset: 1px;
 }
 
-.field--checkbox {
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 0.6rem;
-}
-
-.field--checkbox input {
-  margin-top: 0.3rem;
-  width: 1.05rem;
-  height: 1.05rem;
-  flex: none;
-  accent-color: var(--accent);
-}
-
-.field--checkbox label {
-  font-weight: 400;
-  color: var(--ink-2);
-  font-size: 0.9375rem;
-}
-
-.form-privacy {
-  font-size: 0.875rem;
-  color: var(--ink-2);
-}
-
 .submit-btn {
   font: inherit;
   font-weight: 580;
@@ -452,8 +342,8 @@ svg {
   border-color: var(--accent-strong);
 }
 
-.form-fallback {
-  font-size: 0.9375rem;
+.form-privacy {
+  font-size: 0.875rem;
   color: var(--ink-2);
 }
 
@@ -470,11 +360,6 @@ svg {
   align-items: baseline;
   color: var(--ink-2);
   font-size: 0.9375rem;
-}
-
-.footer-brand {
-  font-weight: 600;
-  color: var(--ink);
 }
 
 /* ---------- 404 ---------- */

@@ -23,7 +23,7 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    name: 'E2283',
+    name: 'E2283.app',
     url: 'https://e2283.app',
     status: 'live',
     cta: 'Visit e2283.app',
@@ -41,7 +41,7 @@ export const products: Product[] = [
     icon: 'particle-gauge',
   },
   {
-    name: 'Digital Image Correlation',
+    name: 'DigitalImageCorrelation.org',
     url: 'https://digitalimagecorrelation.org',
     status: 'live',
     cta: 'Visit digitalimagecorrelation.org',

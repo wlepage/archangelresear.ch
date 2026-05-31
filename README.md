@@ -46,10 +46,6 @@ Edit [`src/data/products.ts`](src/data/products.ts). Each project is one object:
 - **To reorder:** change the array order — cards render in array order.
 - `status: 'coming-soon'` shows an "In development" badge and renders the CTA as non-linked text (so there's no broken link before launch).
 
-### Edit focus areas
-
-Edit [`src/data/focus.ts`](src/data/focus.ts) (`focusIntro` and the `focusAreas` array).
-
 ### Edit site-wide values
 
 Brand name, legal name, domain, contact email, and the Formspree endpoint live in [`src/config.ts`](src/config.ts).
@@ -67,7 +63,7 @@ To use a different form or provider:
 1. Change `formEndpoint` in `src/config.ts`.
 2. If the new provider expects different field names, update the `name="..."` attributes in [`src/components/ContactForm.astro`](src/components/ContactForm.astro).
 
-A `mailto:` fallback to `info@archangelresear.ch` is always visible, so the page works even if the form provider is unavailable.
+The contact form is the only contact channel shown on the page — no email address is displayed.
 
 ## Accessibility & performance
 
@@ -111,8 +107,8 @@ Then enable **Enforce HTTPS** in Settings → Pages once the certificate is issu
 public/            static assets served as-is (CNAME, robots.txt, favicon, fonts, og.png)
 scripts/           OG image source + generator
 src/
-  components/      Header, Hero, Focus, ProductCard, Products, ContactForm, Footer
-  data/            products.ts, focus.ts  ← edit content here
+  components/      Header, Hero, ProductCard, Products, ContactForm, Footer
+  data/            products.ts  ← edit content here
   icons/           custom SVG product icons + registry
   layouts/         BaseLayout.astro (head metadata, fonts, skip link)
   pages/           index.astro, 404.astro

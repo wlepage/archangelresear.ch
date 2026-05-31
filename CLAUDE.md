@@ -36,13 +36,13 @@ These are easy to violate by reflex; verify against them before considering work
 - **Minimal client-side JS.** Static HTML/CSS first. No external font loading unless justified.
 - **Do not mention the founder's name, any bio, or university/day-job content.** Do not reference `amdg.science` (reserved for a later version).
 - **No religious/angelic imagery** despite the brand name. Product icons are custom simple-line/geometric SVGs, decorative (`aria-hidden="true"`) unless they convey meaning.
-- **Contact form** must be static-site-compatible (configurable external endpoint placeholder — Formspree/Basin/Netlify — clearly marked for later wiring) **and** always include the visible mailto fallback `info@archangelresear.ch`. No newsletter signup.
+- **Contact form** is the only contact channel: it posts to Formspree (endpoint in `src/config.ts`). Per the owner's direction, **no email address is displayed anywhere** on the page (the form replaces the mailto fallback). No newsletter signup.
 - Targets: **WCAG 2.2 AA**, Lighthouse Accessibility 95+ (ideally 100), Lighthouse Performance 95+.
 
 ## Maintainability expectations
 
 - Product/project content lives in **one data file** (e.g. `src/data/products.{ts,json}`). Adding a fourth product later must mean editing only that file — never duplicate card markup inline.
-- Use shared components for Header, Hero, Focus areas, Product card, Contact form, Footer.
+- Use shared components for Header, Hero, Product card, Contact form, Footer.
 - Footer year should be dynamic (build-time) or in one obvious place.
 - The owner is "technically comfortable" but not a framework expert — keep it simple and the README must explain how to add/remove/edit a product.
 

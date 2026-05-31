@@ -28,7 +28,7 @@ export const products: Product[] = [
     status: 'live',
     cta: 'Visit e2283.app',
     description:
-      'E2283 predicts the extreme values of defect sizes that drive fatigue failures in metals, using maximum-likelihood estimation to fit the Gumbel distribution to the largest 24 observed defects, following ASTM E2283.',
+      'Predicts the extreme values of defect sizes that drive fatigue failures in metals, using maximum-likelihood estimation to fit the Gumbel distribution to the largest 24 observed defects, following ASTM E2283.',
     icon: 'e2283',
   },
   {
@@ -37,7 +37,7 @@ export const products: Product[] = [
     status: 'coming-soon',
     cta: 'Coming soon',
     description:
-      'Particle Gauge measures defect sizes from microscopic images and is the first code available that automatically merges stringers while allowing manual user edits, all in a fully repeatable, deterministic, and traceable algorithm.',
+      'Measures defect sizes from microscope images and is the first code available that automatically merges stringers while allowing manual user edits, all in a fully repeatable, deterministic, and traceable algorithm.',
     icon: 'particle-gauge',
   },
   {
@@ -46,7 +46,7 @@ export const products: Product[] = [
     status: 'live',
     cta: 'Visit digitalimagecorrelation.org',
     description:
-      'digitalimagecorrelation.org is a project created for the experimental mechanics community to equip new DIC practitioners with the basics of DIC so they can produce optimum measurements in a time-efficient manner.',
+      'Equips new DIC practitioners with the basics of DIC so they can produce optimum measurements in a rapid manner.',
     icon: 'dic',
   },
 ];

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fafafa" />
+  <rect x="0" y="0" width="1200" height="12" fill="#1a4f8b" />
+
+  <!-- mark -->
+  <g transform="translate(96, 120)">
+    <rect width="84" height="84" rx="18" fill="#111111" />
+    <path d="M22 62 L42 24 L62 62" fill="none" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
+    <line x1="31" y1="48" x2="53" y2="48" stroke="#1a4f8b" stroke-width="6.5" stroke-linecap="round" />
+  </g>
+
+  <text x="200" y="178" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#111111">Archangel Research</text>
+
+  <text x="96" y="330" font-family="Helvetica, Arial, sans-serif" font-size="62" font-weight="700" fill="#111111" letter-spacing="-1.5">
+    <tspan x="96" dy="0">Focused tools for materials and</tspan>
+    <tspan x="96" dy="78">mechanical engineering teams.</tspan>
+  </text>
+
+  <text x="96" y="540" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#565656">
+    Defect measurement · Fatigue extremes · Microscopy · Experimental mechanics
+  </text>
+</svg>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Focus from '../components/Focus.astro';
+import Products from '../components/Products.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <span id="top"></span>
+  <Header />
+  <main id="main">
+    <Hero />
+    <Products />
+    <Focus />
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>

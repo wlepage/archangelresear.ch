@@ -1,0 +1,54 @@
+---
+import { site } from '../config';
+---
+
+<section id="contact" class="section contact" aria-labelledby="contact-heading">
+  <div class="container contact-inner">
+    <div class="contact-intro">
+      <h2 id="contact-heading" class="section-heading">Contact</h2>
+      <p class="section-intro">
+        For questions about Archangel Research or its projects, contact{' '}
+        <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </div>
+
+    <form
+      class="contact-form"
+      action={site.formEndpoint}
+      method="POST"
+      aria-describedby="form-privacy"
+    >
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <div class="field field--checkbox">
+        <input id="consent" name="consent" type="checkbox" value="yes" />
+        <label for="consent">
+          I understand this information will be used only to respond to my inquiry.
+        </label>
+      </div>
+
+      <p id="form-privacy" class="form-privacy">
+        Information submitted through this form is used only to respond to your inquiry.
+      </p>
+
+      <button type="submit" class="submit-btn">Send message</button>
+
+      <p class="form-fallback">
+        Prefer email? Reach us directly at <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </form>
+  </div>
+</section>

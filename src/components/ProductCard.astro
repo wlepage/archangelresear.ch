@@ -1,0 +1,45 @@
+---
+import type { Product } from '../data/products';
+import { icons } from '../icons';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const Icon = icons[product.icon];
+const isLive = product.status === 'live';
+const statusLabel = isLive ? 'Live' : 'In development';
+---
+
+<li class="product-card" role="listitem">
+  <div class="product-icon-wrap">
+    <Icon />
+  </div>
+
+  <div class="product-body">
+    <div class="product-head">
+      <h3 class="product-name">{product.name}</h3>
+      <span class={`status status--${product.status}`}>
+        <span class="status-dot" aria-hidden="true"></span>
+        {statusLabel}
+      </span>
+    </div>
+
+    <p class="product-description">{product.description}</p>
+
+    {
+      isLive ? (
+        <a class="product-cta" href={product.url} target="_blank" rel="noopener">
+          {product.cta}
+          <span class="visually-hidden"> (opens in a new tab)</span>
+          <span class="cta-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+      ) : (
+        <p class="product-cta product-cta--pending">{product.cta}</p>
+      )
+    }
+  </div>
+</li>

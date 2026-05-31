@@ -1,0 +1,15 @@
+---
+import { site } from '../config';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; {year} {site.legalName}</p>
+    <p class="footer-brand">{site.brand}</p>
+    <p class="footer-email">
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Archangel Research">
+  <rect width="32" height="32" rx="7" fill="#111111" />
+  <!-- Geometric apex mark (peak / extreme value) -->
+  <path
+    d="M9 23 L16 9 L23 23"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <line x1="12.2" y1="17.5" x2="19.8" y2="17.5" stroke="#1a4f8b" stroke-width="2.4" stroke-linecap="round" />
+</svg>

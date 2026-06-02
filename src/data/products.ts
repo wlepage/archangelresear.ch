@@ -34,7 +34,7 @@ export const products: Product[] = [
   {
     name: 'Coming soon: Particle Gauge',
     /** url: 'https://particlegauge.com', */
-    url: 'https://archangelresear.ch',
+    url: '#',
     status: 'coming-soon',
     cta: 'Coming soon',
     description:

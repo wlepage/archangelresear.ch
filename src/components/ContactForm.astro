@@ -8,7 +8,7 @@ import { site } from '../config';
       <h2 id="contact-heading" class="section-heading">Contact</h2>
     </div>
 
-    <form class="contact-form" action={site.formEndpoint} method="POST">
+    <form class="contact-form" action={site.formEndpoint} method="POST" data-contact-form>
       <div class="field">
         <label for="name">Name</label>
         <input id="name" name="name" type="text" autocomplete="name" required />
@@ -25,6 +25,7 @@ import { site } from '../config';
       </div>
 
       <button type="submit" class="submit-btn">Submit</button>
+      <p class="form-status" role="status" aria-live="polite" data-contact-status></p>
 
       <p class="form-privacy">
         Privacy policy: if you use the contact form, your data is only stored and used to reply to
@@ -33,3 +34,47 @@ import { site } from '../config';
     </form>
   </div>
 </section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  const status = document.querySelector<HTMLElement>('[data-contact-status]');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!status) return;
+
+    const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const originalButtonText = submitButton?.textContent ?? 'Submit';
+    const formData = new FormData(form);
+
+    status.textContent = 'Sending...';
+    status.dataset.state = 'pending';
+    submitButton?.setAttribute('disabled', 'true');
+    if (submitButton) submitButton.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      form.reset();
+      status.textContent = 'Thanks - your message has been sent.';
+      status.dataset.state = 'success';
+    } catch {
+      status.textContent = 'Something went wrong. Please try again or email us directly.';
+      status.dataset.state = 'error';
+    } finally {
+      submitButton?.removeAttribute('disabled');
+      if (submitButton) submitButton.textContent = originalButtonText;
+    }
+  });
+</script>

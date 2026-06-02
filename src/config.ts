@@ -15,11 +15,6 @@ export const site = {
   /** Default page title and meta description. */
   title: 'Archangel Research',
   description:
-    'Archangel Research builds focused tools for materials science, mechanical engineering, defect measurement, fatigue analysis, microscopy workflows, and experimental mechanics education.',
-  /**
-   * Formspree endpoint for the contact form.
-   * To change providers, swap this URL and update ContactForm.astro if the
-   * field names differ. See README for setup notes.
-   */
+    'Archangel Research solves high-priority problems for engineering and manufacturing teams around the world.',
   formEndpoint: 'https://formspree.io/f/xpqnerzr',
 } as const;

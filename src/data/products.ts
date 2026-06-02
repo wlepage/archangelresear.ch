@@ -46,7 +46,7 @@ export const products: Product[] = [
     status: 'live',
     cta: 'Visit digitalimagecorrelation.org',
     description:
-      'Equips new DIC practitioners with the basics of DIC so they can produce optimum measurements in a rapid manner.',
+      'Equips new DIC practitioners with the basics so they can produce optimum measurements in a rapid manner.',
     icon: 'dic',
   },
 ];

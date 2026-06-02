@@ -11,12 +11,10 @@
 
   <text x="200" y="178" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#111111">Archangel Research</text>
 
-  <text x="96" y="330" font-family="Helvetica, Arial, sans-serif" font-size="62" font-weight="700" fill="#111111" letter-spacing="-1.5">
-    <tspan x="96" dy="0">Focused tools for materials and</tspan>
-    <tspan x="96" dy="78">mechanical engineering teams.</tspan>
-  </text>
-
-  <text x="96" y="540" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#565656">
-    Defect measurement · Fatigue extremes · Microscopy · Experimental mechanics
+  <text x="96" y="300" font-family="Helvetica, Arial, sans-serif" font-size="54" font-weight="700" fill="#111111" letter-spacing="-1.5">
+    <tspan x="96" dy="0">Archangel Research solves</tspan>
+    <tspan x="96" dy="68">high-priority problems for</tspan>
+    <tspan x="96" dy="68">engineering and manufacturing</tspan>
+    <tspan x="96" dy="68">teams around the world.</tspan>
   </text>
 </svg>

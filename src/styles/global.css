@@ -195,7 +195,7 @@ svg {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding-block: clamp(3.5rem, 11vw, 8rem);
+  padding-block: clamp(2rem, 7.7vw, 3rem);
 }
 
 .hero-headline {
@@ -205,9 +205,14 @@ svg {
 }
 
 /* ---------- Products ---------- */
+.products {
+  /* tighten the gap between the section rule and the cards (~30% less) */
+  padding-top: calc(var(--section-y) * 0.5);
+}
+
 .product-grid {
   list-style: none;
-  margin: 2.5rem 0 0;
+  margin: 1.5rem 0 0;
   padding: 0;
   display: grid;
   gap: 1.5rem;

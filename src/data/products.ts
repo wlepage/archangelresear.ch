@@ -32,8 +32,9 @@ export const products: Product[] = [
     icon: 'e2283',
   },
   {
-    name: 'Particle Gauge',
-    url: 'https://particlegauge.com',
+    name: 'Coming soon: Particle Gauge',
+    /** url: 'https://particlegauge.com', */
+    url: 'https://archangelresear.ch',
     status: 'coming-soon',
     cta: 'Coming soon',
     description:

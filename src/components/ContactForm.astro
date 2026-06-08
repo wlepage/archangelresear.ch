@@ -34,8 +34,8 @@ const hasRecaptcha = Boolean(site.recaptchaSiteKey);
 
       {
         hasRecaptcha && (
-          <div class="recaptcha-field">
-            <div class="g-recaptcha" data-sitekey={site.recaptchaSiteKey} />
+          <div class="recaptcha-field" data-recaptcha-field>
+            <div class="g-recaptcha" data-sitekey={site.recaptchaSiteKey} data-size="compact" />
           </div>
         )
       }
@@ -56,6 +56,9 @@ const hasRecaptcha = Boolean(site.recaptchaSiteKey);
 <script>
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   const status = document.querySelector<HTMLElement>('[data-contact-status]');
+  const recaptchaField = document.querySelector<HTMLElement>('[data-recaptcha-field]');
+
+  recaptchaField?.setAttribute('hidden', '');
 
   type FormspreeError = {
     code?: string;
@@ -111,6 +114,7 @@ const hasRecaptcha = Boolean(site.recaptchaSiteKey);
     const recaptchaEnabled = form.dataset.recaptchaEnabled === 'true';
 
     if (recaptchaEnabled && !String(formData.get('g-recaptcha-response') ?? '').trim()) {
+      recaptchaField?.removeAttribute('hidden');
       status.textContent = 'Please complete the verification.';
       status.dataset.state = 'error';
       return;
@@ -133,12 +137,14 @@ const hasRecaptcha = Boolean(site.recaptchaSiteKey);
       if (!response.ok) {
         status.textContent = await getFormspreeErrorMessage(response);
         status.dataset.state = 'error';
+        recaptchaField?.removeAttribute('hidden');
         resetRecaptcha();
         return;
       }
 
       form.reset();
       resetRecaptcha();
+      recaptchaField?.setAttribute('hidden', '');
       status.textContent = 'Thank you. Your message has been sent.';
       status.dataset.state = 'success';
     } catch (error) {

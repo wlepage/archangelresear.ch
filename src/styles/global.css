@@ -328,6 +328,12 @@ svg {
   outline-offset: 1px;
 }
 
+.recaptcha-field {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.1rem;
+}
+
 .submit-btn {
   font: inherit;
   font-weight: 580;

@@ -17,4 +17,6 @@ export const site = {
   description:
     'Archangel Research solves high-priority problems for engineering and manufacturing teams around the world.',
   formEndpoint: 'https://formspree.io/f/xpqnerzr',
+  /** Public Google reCAPTCHA v2 checkbox site key. Configure the secret key in Formspree. */
+  recaptchaSiteKey: import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY ?? '',
 } as const;

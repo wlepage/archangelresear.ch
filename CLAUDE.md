@@ -4,26 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project state
 
-The site is **built and working locally** (Astro static site, all checks/a11y tests passing). It is committed on the local `main` branch but **has not been pushed to GitHub yet** — there is no git remote. [PROMPT.md](PROMPT.md) is the original build brief; note that several owner decisions since then override it (see "What this is" and Hard constraints). See "Going live" below for the remaining owner steps.
+The site is **built, working locally, committed, and pushed** to GitHub on `main`. Remote `origin` points to `https://github.com/wlepage/archangelresear.ch.git`. [PROMPT.md](PROMPT.md) is the original build brief; note that several owner decisions since then override it (see "What this is" and Hard constraints). See "Going live" below for the remaining owner steps.
 
 ## What this is
 
 A single-page, static marketing/portfolio ("brag page") site for **Archangel Research**, a materials/mechanical-engineering research-tools brand. Editorial, text-led, minimal — inspired by the Betaworks "Companies" page but not a copy. Canonical domain: `archangelresear.ch`. Deploys to **GitHub Pages**.
 
-The page presents exactly three projects: **E2283.app**, **Particle Gauge**, and **DigitalImageCorrelation.org** — each card is a single clickable link to its external site (no status badges, no CTA buttons). Sections: Header (wordmark only, no nav) → Hero → Products → Contact → Footer. The earlier "Current Focus" section was removed at the owner's request.
+The page presents exactly three projects: **E2283.app**, **Particle Gauge**, and **DigitalImageCorrelation.org** — each card is a single clickable link (no rendered status badges, no rendered CTA buttons). Particle Gauge is currently marked coming soon in data and links to `#`. Sections: Header (wordmark only, no nav) → Hero → Products → Contact → Footer. The earlier "Current Focus" section was removed at the owner's request.
 
-## Going live (remaining owner steps)
+## Going live / operations
 
-The code is done; these steps are the owner's to perform. The deploy workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml) and [public/CNAME](public/CNAME) (`archangelresear.ch`) are already in place. Full DNS values and commands are in the [README](README.md#deployment-github-pages); the short version:
+The code is done and pushed. The CI workflow [.github/workflows/ci.yml](.github/workflows/ci.yml), deploy workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml), and [public/CNAME](public/CNAME) (`archangelresear.ch`) are already in place. Remaining owner/platform steps:
 
-1. **Pick repo visibility.** Owner wants a **private** repo named `archangelresear.ch`. ⚠️ GitHub Pages from a **private** repo requires a paid plan (Pro/Team/Enterprise). On the **free** plan the repo must be **public** for Pages to publish — decide before pushing.
-2. **Create the repo and push `main`.** No remote/auth is set up yet (no `gh` CLI, no SSH keys; Homebrew is available). Two paths:
-   - `brew install gh` → `gh auth login` (browser) → `gh repo create archangelresear.ch --private --source=. --remote=origin --push`, or
-   - create an empty repo on github.com (no README/license), then `git remote add origin <url>` and `git push -u origin main`.
-3. **Enable Pages:** repo **Settings → Pages → Source = "GitHub Actions"**. The workflow then builds and deploys on every push to `main`.
-4. **Point DNS** for `archangelresear.ch` at the registrar: apex `A` records to `185.199.108.153/109.153/110.153/111.153` (optional `AAAA` for IPv6). `CNAME` is already committed, so Pages adopts the custom domain; enable **Enforce HTTPS** once the cert issues.
-5. **Confirm Formspree.** The form posts to `https://formspree.io/f/xpqnerzr` (in [src/config.ts](src/config.ts)); the first submission may need a one-time confirmation in the Formspree dashboard.
-6. (Optional) Set a git identity for clean attribution: `git config user.name` / `git config user.email`.
+1. **Repo visibility / Pages eligibility:** if the repo is private, GitHub Pages requires a paid plan (Pro/Team/Enterprise). On the free plan the repo must be public for Pages to publish.
+2. **Enable Pages:** repo **Settings → Pages → Source = "GitHub Actions"**. The deploy workflow builds and deploys on every push to `main`.
+3. **Point DNS** for `archangelresear.ch` at the registrar: apex `A` records to `185.199.108.153/109.153/110.153/111.153` (optional `AAAA` for IPv6). `CNAME` is already committed, so Pages adopts the custom domain; enable **Enforce HTTPS** once the cert issues.
+4. **Confirm Formspree.** The form posts to `https://formspree.io/f/xpqnerzr` (in [src/config.ts](src/config.ts)); the first submission may need a one-time confirmation in the Formspree dashboard.
 
 ## Stack & commands
 
@@ -51,7 +47,7 @@ These are easy to violate by reflex; verify against them before considering work
 - **Minimal client-side JS.** Static HTML/CSS first. No external font loading unless justified.
 - **Do not mention the founder's name, any bio, or university/day-job content.** Do not reference `amdg.science` (reserved for a later version).
 - **No religious/angelic imagery** despite the brand name. Product icons are custom simple-line/geometric SVGs, decorative (`aria-hidden="true"`) unless they convey meaning.
-- **Contact form** is the only contact channel: it posts to Formspree (endpoint in `src/config.ts`). Per the owner's direction, **no email address is displayed anywhere** on the page (the form replaces the mailto fallback). No newsletter signup.
+- **Contact form** is the only contact channel: it posts to Formspree (endpoint in `src/config.ts`) and uses minimal inline JS to show the thank-you/error state on the page instead of navigating to Formspree. Keep the normal `action`/`method` attributes as a no-JS fallback. Per the owner's direction, **no email address is displayed anywhere** on the page (the form replaces the mailto fallback). No newsletter signup.
 - Targets: **WCAG 2.2 AA**, Lighthouse Accessibility 95+ (ideally 100), Lighthouse Performance 95+.
 
 ## Maintainability expectations

@@ -94,6 +94,7 @@ const hasRecaptcha = Boolean(site.recaptchaSiteKey);
       const field = error?.field?.toLowerCase() ?? '';
 
       if (field === 'g-recaptcha-response' || code.includes('captcha')) {
+        status?.setAttribute('data-state', 'warning');
         return 'Please complete the verification and try again.';
       }
 
@@ -116,7 +117,7 @@ const hasRecaptcha = Boolean(site.recaptchaSiteKey);
     if (recaptchaEnabled && !String(formData.get('g-recaptcha-response') ?? '').trim()) {
       recaptchaField?.removeAttribute('hidden');
       status.textContent = 'Please complete the verification.';
-      status.dataset.state = 'error';
+      status.dataset.state = 'warning';
       return;
     }
 

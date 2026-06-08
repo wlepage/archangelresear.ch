@@ -372,6 +372,10 @@ svg {
   color: #b3261e;
 }
 
+.form-status[data-state='warning'] {
+  color: var(--pending);
+}
+
 .form-privacy {
   font-size: 0.875rem;
   color: var(--ink-2);
